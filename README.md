@@ -1,5 +1,7 @@
 # Medicover Operations Intelligence Dashboard
 
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/rishiii-tech/Medicover)
+
 A human-designed, enterprise-grade **Hospital Operations Intelligence Dashboard & Data Reconciliation Engine** engineered for hospital Operations Leads and Clinical Administrators.
 
 ---
