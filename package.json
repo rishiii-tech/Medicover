@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "description": "Professional Hospital Operations Intelligence Dashboard & Data Reconciliation Engine",
   "scripts": {
+    "start": "node server/index.js",
     "server": "node server/index.js",
     "client": "npm run dev --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "build": "npm run build --prefix client"
+    "build": "npm install --prefix client && npm run build --prefix client"
   },
   "dependencies": {
     "cors": "^2.8.6",

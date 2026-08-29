@@ -230,7 +230,19 @@ app.post('/api/resources/oxygen/update', (req, res) => {
   }
 });
 
+// 18. Serve static client production build if available
+const clientDistPath = path.join(__dirname, '../client/dist');
+const fs = require('fs');
+if (fs.existsSync(clientDistPath)) {
+  app.use(express.static(clientDistPath));
+  app.get('*', (req, res) => {
+    if (!req.path.startsWith('/api')) {
+      res.sendFile(path.join(clientDistPath, 'index.html'));
+    }
+  });
+}
+
 // Start Express server
 app.listen(PORT, () => {
-  console.log(`[Medicover Server] Hospital Operations API running on http://localhost:${PORT}`);
+  console.log(`[Medicover Server] Hospital Operations API running on port ${PORT}`);
 });
